@@ -21,16 +21,11 @@ $gray-medium-light: #eaeaea;
   @include box_sizing;
 }
 
-/* header */
-img {
-    
-  } 
-
 #logo {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
-    color: yellow;
+    color: turquoise;
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
@@ -39,7 +34,7 @@ img {
   }
   
   #logo:hover {
-    color: blue;
+    color:plum;
     text-decoration: none;
   }
 
@@ -167,4 +162,25 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+.body-x {
+ background-image: asset-url("b2.jpg");
+ background-size : 100%; 
+}
+
+.text-box {
+  font-family: 'Times New Roman', Times, serif;
+  color: turquoise;
+  font-size: 1.4em;
+}
+
+.tittle-page {
+  color: aqua;
+  font-size: 2.4em;
+}
+
+.color-bt{
+  color: purple ; 
+  background-color: turquoise;
 }

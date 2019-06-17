@@ -1,0 +1,19 @@
+<% provide(:title, "Log in") %>
+<h1 style="color: aqua ; font-size: 2.5em">Log in</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email , class:"text-box"%>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password, class:"text-box" %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary", style: "color: purple ; background-color: turquoise"%>
+    <% end %>
+
+    <p style="color: white ; font-size: 1.5em">New user? <%= link_to "Sign up now!", signup_path, style: "color: blue ; font-size:1.2em" %></p>
+  </div>
+</div>  
