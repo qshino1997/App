@@ -10,6 +10,12 @@
 
       <%= f.label :password, class:"text-box" %>
       <%= f.password_field :password, class: 'form-control' %>
+      
+      <%= f.label :remember_me, style:"font-family: 'Times New Roman', Times, serif; color: turquoise; font-size: 1em;" , class: "checkbox inline" do %>
+      <%= f.check_box :remember_me %>
+      <span class ="text-box">Remember me on this computer</span>
+      <% end %>
+
 
       <%= f.submit "Log in", class: "btn btn-primary", style: "color: purple ; background-color: turquoise"%>
     <% end %>
