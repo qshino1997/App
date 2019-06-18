@@ -3,20 +3,20 @@
     <%= link_to "sample app", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home" , root_path , style:"color: aqua ; font-size: 1.2em" %></li>
-        <li><%= link_to "Help", help_path , style:"color: aqua ; font-size: 1.2em"%></li>
+        <li><%= link_to image_tag("home.png") , root_path  %></li>
+        <li><%= link_to image_tag("help.png"), help_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Users", users_path , style:"color: aqua ; font-size: 1.2em"%></li>
+          <li><%= link_to image_tag("List.png"), users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: aqua ; font-size: 1.2em">
-              Account <b class="caret"></b>
+              <%= image_tag("menu.png") %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user, style:"color: aqua ; font-size: 1.2em" %></li>
-              <li><%= link_to "Edit ", edit_user_path(current_user) , style:"color: aqua ; font-size: 1.2em"%></li>
+              <li><%= link_to image_tag("user.png"), current_user, style:"color: aqua ; font-size: 1.2em" %></li>
+              <li><%= link_to image_tag("edit.png"), edit_user_path(current_user) , style:"color: aqua ; font-size: 1.2em"%></li>
               <li class="divider"></li>
               <li>
-                <%= link_to "Log out", logout_path, method: :delete, style:"color: aqua ; font-size: 1.2em" %>
+                <%= link_to image_tag("logout.png"), logout_path, method: :delete, style:"color: aqua ; font-size: 1.2em" %>
               </li>
             </ul>
           </li>
