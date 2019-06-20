@@ -1,0 +1,23 @@
+<% provide(:title, @clothe.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1 style="font-family: 'Times New Roman', Times, serif;
+  color: turquoise;
+  font-size: 2em">
+  <li>
+       Tên: <%= @clothe.name %>
+  </li>
+  <li>
+        Giá: <%= @clothe.gia %> vnđ
+  </li>
+  <li>
+        Số lượng: <%= @clothe.soluong %> cái
+  </li>
+  <li>
+  <%= image_tag @clothe.picture.url if @clothe.picture? %>
+  </li>
+      </h1>
+    </section>
+  </aside>
+  </div>

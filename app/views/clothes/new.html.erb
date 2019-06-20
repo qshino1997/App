@@ -1,2 +1,10 @@
-<h1>Clothes#new</h1>
-<p>Find me in app/views/clothes/new.html.erb</p>
+<% provide(:title, 'Add Clothes') %>
+<% provide(:button_text, 'Them san pham') %>
+<h1 style="font-family: 'Times New Roman', Times, serif;
+  color: turquoise;
+  font-size: 3em">Thêm sản phẩm</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render 'formclothes' %>
+  </div>
+</div>
