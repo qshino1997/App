@@ -1,9 +1,20 @@
 <% provide(:title, 'All clothes') %>
-<h1>All users</h1>
+<% provide(:button_text, 'Mua') %>
+<h1 style="font-family: 'Times New Roman', Times, serif;
+  color: turquoise;
+  font-size: 3em">Sản phẩm</h1>
 
-<ul>
-<% @clothe.each do |clothe| %>
- <li>
-  <%= link_to clothe.name, clothe, style:"color:turquoise ; font-size: 1.5em" %>
-</li>
+<ul class="users" style = "color:yellow ; font-size:2em">
+  <% @clothes.each do |clothe| %>
+  <p></p>
+    <li>
+      <%= image_tag clothe.picture.url if clothe.picture? %> 
+      <p>Tên: <%= link_to clothe.name, clothe %></p>
+      <p>Giá: <%= clothe.gia %></p>
+      <p>Số  lượng: <%= clothe.soluong %></p>
+      <p><%= link_to "Mua", clothe , method: :buy,
+                                  data: { confirm: "You sure?" } , style:"color:red ; font-size: 1.5em" %>
+      </p> 
+    </li>
+  <% end %>
 </ul>

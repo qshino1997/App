@@ -204,6 +204,8 @@ input {
 .users {
   list-style: none;
   margin: 0;
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
   li {
     overflow: auto;
     padding: 10px 0;

@@ -1,7 +1,8 @@
 class ClothesController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update, :new , :show , :index]
 
   def index
-  @clothe = Clothe.all
+    @clothes = Clothe.all
   end
 
   def show
@@ -22,11 +23,21 @@ class ClothesController < ApplicationController
     end
   end
 
-  private
+  def buy
+  end
 
-    def clothe_params
-      params.require(:clothe).permit(:name, :gia, :soluong,:picture)
+  private
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
     end
 
+    def clothe_params
+      params.require(:clothe).permit(:name, :gia, :soluong,
+                                   :picture)
+    end
     
 end

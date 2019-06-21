@@ -1,4 +1,5 @@
 class Clothe < ApplicationRecord
+    has_many :picture 
     VALID_NAMECL_REGEX = /\A[A-Za-z]/i
     validates :name, presence: true, length: {maximum: 50}, format:{with: VALID_NAMECL_REGEX, message: "VUI LONG NHAP CHUI CAI"}, 
     uniqueness: { case_sensitive: false }

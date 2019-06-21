@@ -6,6 +6,7 @@
         <li><%= link_to image_tag("shop.png"), clothes_path %></li>
         <li><%= link_to image_tag("home.png") , root_path  %></li>
         <li><%= link_to image_tag("help.png"), help_path %></li>
+        <li><%= link_to image_tag("user.png"), current_clothe, style:"color: aqua ; font-size: 1.2em" %></li>
         <% if logged_in? %>
           <li><%= link_to image_tag("List.png"), users_path %></li>
           <li class="dropdown">

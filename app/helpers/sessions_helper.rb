@@ -31,6 +31,19 @@ module SessionsHelper
       end
     end
 
+    def current_clothe?(clothe)
+      clothe == current_clothe
+    end
+
+    def current_clothe
+      if (clothe_id = session[:clothe_id])
+        @current_clothe ||= Clothe.find_by(id: clothe_id)
+      elsif (user_id = cookies.signed[:user_id])
+        clothe = Clothe.find_by(id: clothe_id)   
+          @current_clothe = clothe
+      end
+    end
+
     def logged_in?
       !current_user.nil?
     end
