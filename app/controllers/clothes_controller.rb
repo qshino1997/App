@@ -2,7 +2,11 @@ class ClothesController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :new , :show , :index]
 
   def index
+    @clothes = if params[:term]
+    Clothe.where('name LIKE ?', "%#{params[:term]}%")
+    else
     @clothes = Clothe.all
+    end
   end
 
   def show
@@ -37,7 +41,7 @@ class ClothesController < ApplicationController
 
     def clothe_params
       params.require(:clothe).permit(:name, :gia, :soluong,
-                                   :picture)
+                                   :picture, :term)
     end
     
 end

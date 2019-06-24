@@ -32,7 +32,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'faker',          '~> 1.9.3'
 gem 'will_paginate',           '~> 3.1.6'
 gem 'bootstrap-will_paginate', '~> 1.0.0'
-
+gem 'pg_search'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'carrierwave',             '~> 1.2.2'
@@ -53,6 +53,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'dotenv-rails'
 end
 
 group :production do

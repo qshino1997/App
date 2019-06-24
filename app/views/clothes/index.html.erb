@@ -4,16 +4,18 @@
   color: turquoise;
   font-size: 3em">Sản phẩm</h1>
 
-<ul class="users" style = "color:yellow ; font-size:2em">
+<%= form_tag(clothes_path, method: :get) do %>
+  <%= text_field_tag :term , params[:term] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+<ul class="users" style = "color:yellow ; font-size:1.2em; text-align: center">
   <% @clothes.each do |clothe| %>
-  <p></p>
     <li>
-      <%= image_tag clothe.picture.url if clothe.picture? %> 
+      <p><%= image_tag(clothe.picture.url, width: '80%') if clothe.picture? %> 
       <p>Tên: <%= link_to clothe.name, clothe %></p>
       <p>Giá: <%= clothe.gia %></p>
       <p>Số  lượng: <%= clothe.soluong %></p>
-      <p><%= link_to "Mua", clothe , method: :buy,
-                                  data: { confirm: "You sure?" } , style:"color:red ; font-size: 1.5em" %>
+      <p><%= link_to "Them vao gio hang", clothe , data: { confirm: "You sure?" } , style:"color:red ; font-size: 1.5em" %>
       </p> 
     </li>
   <% end %>
