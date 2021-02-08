@@ -35,7 +35,7 @@ gem 'bootstrap-will_paginate', '~> 1.0.0'
 gem 'pg_search'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'carrierwave',             '~> 1.2.2'
+gem 'carrierwave',             '~> 1.3.2'
 gem 'mini_magick',             '~> 4.7.0'
 
 # Reduces boot times through caching; required in config/boot.rb
